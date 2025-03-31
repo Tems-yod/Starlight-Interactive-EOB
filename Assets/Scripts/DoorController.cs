@@ -31,16 +31,18 @@ public class DoorController : MonoBehaviour
 
 	public void PlayAnimation()
 	{
-		DoorSound.Play(0);
+		
 		if(!doorOpen && !pauseInteraction)
 		{
 			doorAnim.Play(openAnimationName, 0, 0.0f);
+			DoorSound.Play(0);
 			doorOpen = true;
 			StartCoroutine(PauseDoorInteraction());
 		}
 		else if(doorOpen && !pauseInteraction)
 		{
 			doorAnim.Play(closeAnimationName, 0, 0.0f);
+			DoorSound.Play(0);
 			doorOpen = false;
 			StartCoroutine(PauseDoorInteraction());
 		}
