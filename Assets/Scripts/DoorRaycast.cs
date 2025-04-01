@@ -43,7 +43,6 @@ private void Update()
 			if(Input.GetKeyDown(openDoorKey))
 			{
 				raycastedObj.PlayAnimation();
-				Debug.Log("Key pressed");
 			}
 			
 		}
