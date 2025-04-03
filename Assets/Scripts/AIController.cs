@@ -14,9 +14,13 @@ public class AIController : MonoBehaviour
     bool walkPointSet;
     public float walkPointRange;
 
+    
+
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
+
+    public float percentPlayerKilled = 0f;
 
     //States
     public float sightRange, attackRange;
@@ -68,6 +72,7 @@ public class AIController : MonoBehaviour
 
     private void ChasePlayer()
     {
+        percentPlayerKilled = 0;
         agent.SetDestination(player.position);
     }
 
@@ -79,8 +84,8 @@ public class AIController : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-            //ATTACK CODE HERE
-
+            percentPlayerKilled+=10;
+            Debug.Log("PlayerPercentKilled: "+percentPlayerKilled);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
