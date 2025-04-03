@@ -8316,7 +8316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1836533770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8383,7 +8383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obtained: {fileID: 0}
   textObtained: {fileID: 0}
-  titleScreen: {fileID: 123895213}
+  titleScreen: {fileID: 1836533769}
   reticle: {fileID: 758099879}
   textGo: 0
   item: 0
