@@ -4193,7 +4193,7 @@ MonoBehaviour:
   boostMultiplier: 5
   boosting: 0
   currentBoostAmount: 0
-  thrustGlideReduction: 0.999
+  thrustGlideReduction: 0.132
   upDownGlideReduction: 0.111
   leftRightGlideReduction: 0.111
   dialogue: 0
