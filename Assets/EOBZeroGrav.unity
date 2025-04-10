@@ -2473,7 +2473,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.57
-  m_Range: 32.8
+  m_Range: 1055.644
   m_SpotAngle: 133
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2531,8 +2531,8 @@ Transform:
   m_GameObject: {fileID: 722059540}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 30.33, y: 72.21, z: 24.07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 129, y: 104.4, z: -32.5}
+  m_LocalScale: {x: 1.4891, y: 1.4891, z: 1.4891}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4376,15 +4376,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978534964}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.98069, z: -0, w: -0.1955688}
-  m_LocalPosition: {x: 18.09, y: 66.25, z: -6}
+  m_LocalRotation: {x: -0, y: -0.051234808, z: -0, w: 0.9986866}
+  m_LocalPosition: {x: 130.1056, y: 98.88, z: -83.78541}
   m_LocalScale: {x: 0.6052, y: 0.6052, z: 0.6052}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 759641293}
   - {fileID: 1331459927}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 202.556, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -5.874, z: 0}
 --- !u!114 &978534972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8417,7 +8417,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.57
-  m_Range: 32.8
+  m_Range: 49.86954
   m_SpotAngle: 133
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -8475,7 +8475,7 @@ Transform:
   m_GameObject: {fileID: 1838940773}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.6, y: 69.628, z: 24.07}
+  m_LocalPosition: {x: 125.6, y: 96.1, z: -106.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8830,17 +8830,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7808074646887050336, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.010059
+      objectReference: {fileID: 0}
+    - target: {fileID: -7808074646887050336, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.010059
+      objectReference: {fileID: 0}
+    - target: {fileID: -7808074646887050336, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.010059
+      objectReference: {fileID: 0}
+    - target: {fileID: -7808074646887050336, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.1
+      value: 7.3
       objectReference: {fileID: 0}
     - target: {fileID: -7808074646887050336, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.87
+      value: 20.7
       objectReference: {fileID: 0}
     - target: {fileID: -7808074646887050336, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16
+      value: -14.73
       objectReference: {fileID: 0}
+    - target: {fileID: -6623200060695040417, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53daa041de76e1a45a3cbf5549f1990e, type: 2}
     - target: {fileID: 919132149155446097, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
       propertyPath: m_Name
       value: Cups,Boxes,Stretcher,Shelves
@@ -8857,6 +8873,7 @@ PrefabInstance:
     - {fileID: -4030500611469080468, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
     - {fileID: 303823596185694867, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
     - {fileID: 8302705699251078660, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
+    - {fileID: -8764591222424872372, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7209286084748154199, guid: 40bc297d70362cb4f821ce6cdf711f6b, type: 3}
