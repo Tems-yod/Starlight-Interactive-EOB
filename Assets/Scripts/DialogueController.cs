@@ -2,45 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using Unity.UI;
 
 public class DialogueController : MonoBehaviour
 {
     public TextMeshProUGUI DialogueText;
     public string[] Sentences;
     private int Index = 0;
+    [SerializeField] private Text yes;
     public float DialogueSpeed;
-    [SerializeField] private ZeroGravity P;
     [SerializeField] private GameObject dialo;
+    private bool run = false;
+    private bool yip = false;
     
     
 
     // Start is called before the first frame update
     void Start()
     {
-        P = GameObject.Find("Player").GetComponent<ZeroGravity>();
     
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (P.containment)
-        {
-            dialo.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-           
-            NextSentence();
-            }
+        popUp();
+        Text1();
         
-        if(Index >= Sentences.Length)
-        {
-            P.dialogue = true;
-            dialo.SetActive(false);
-            
-        }
-        }
     
+    }
+    private void popUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            dialo.gameObject.SetActive(true);
+            yip = true;
+            yes.text = "Name: Kris Bellaren";
+        }
+
+    }
+
+    private void Text1()
+    {
+        if ((Input.GetKeyDown(KeyCode.E) && run == false) || yip == true)
+        {
+            run = true;
+            yip = false;
+            NextSentence();
+
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && Index == Sentences.Length)
+        {
+            dialo.gameObject.SetActive(false);
+            DialogueText.text = "";
+            Index = 0;
+        }
+
     }
 
     void NextSentence()
@@ -61,14 +79,7 @@ public class DialogueController : MonoBehaviour
             yield return new WaitForSeconds(DialogueSpeed);
         }
         Index++;
-    }
-
-    void working()
-    {
-        if(P.containment)
-        {
-            dialo.gameObject.SetActive(true);
-        }
+        run = false;
     }
 
    
