@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject titleScreen;
     [SerializeField] private GameObject reticle;
     [SerializeField] private GameObject PlayerUI;
+    [SerializeField] private GameObject ChangingUI;
+    [SerializeField] private GameObject DialogueJump;
     public bool textGo = false;
     public bool item = false; 
     // Start is called before the first frame update
@@ -29,4 +31,17 @@ public class UIManager : MonoBehaviour
             PlayerUI.gameObject.SetActive(true);
         }
     }
+
+    public void changeUP()
+    {
+        ChangingUI.gameObject.SetActive(false);
+        DialogueJump.gameObject.SetActive(true);
+
+    }
+    public void changeBack()
+    {
+        ChangingUI.gameObject.SetActive(true);
+        DialogueJump.gameObject.SetActive(false);
+    }
+    
 }
