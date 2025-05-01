@@ -84,7 +84,7 @@ public class AIController : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-            percentPlayerKilled+=10;
+            percentPlayerKilled+=1;
             Debug.Log("PlayerPercentKilled: "+percentPlayerKilled);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
