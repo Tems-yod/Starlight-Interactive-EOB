@@ -23,8 +23,8 @@ public class WhiteOutEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        percentKilled = (AIController.percentPlayerKilled)/100;
-
+        percentKilled = (AIController.percentPlayerKilled)/200;
+        Debug.Log("PercentKilled: "+percentKilled);
         image = GetComponent<Image>();
         var tempColor = image.color;
         tempColor.a = percentKilled;

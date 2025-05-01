@@ -72,7 +72,10 @@ public class AIController : MonoBehaviour
 
     private void ChasePlayer()
     {
-        percentPlayerKilled = 0;
+        if(percentPlayerKilled>0)
+            {
+                percentPlayerKilled -= 5;
+            }
         agent.SetDestination(player.position);
     }
 
@@ -84,8 +87,7 @@ public class AIController : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-            percentPlayerKilled+=10;
-            Debug.Log("PlayerPercentKilled: "+percentPlayerKilled);
+            percentPlayerKilled+=1;
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }

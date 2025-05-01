@@ -14,8 +14,10 @@ public class DoorController : MonoBehaviour
 	[SerializeField] private int waitTimer = 1;
 	[SerializeField] private bool pauseInteraction = false;
 
+	[SerializeField] private bool isLocked = false;
 	
 	AudioSource DoorSound;
+
 
 	void Start()
     {
@@ -35,10 +37,17 @@ public class DoorController : MonoBehaviour
 		
 		if(!doorOpen && !pauseInteraction)
 		{
-			Debug.Log("Door Opening");
-			doorAnim.Play(openAnimationName, 0, 0.0f);
-			DoorSound.Play(0);
-			doorOpen = true;
+			if(!isLocked)
+			{
+				Debug.Log("Door Opening");
+				doorAnim.Play(openAnimationName, 0, 0.0f);
+				DoorSound.Play(0);
+				doorOpen = true;
+			}
+			else
+			{
+			
+			}
 			StartCoroutine(PauseDoorInteraction());
 		}
 		else if(doorOpen && !pauseInteraction)
