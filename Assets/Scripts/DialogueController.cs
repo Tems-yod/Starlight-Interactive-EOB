@@ -154,6 +154,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             Index = 0;
             
@@ -196,6 +197,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences2.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             comp2 = false;
             Index = 0;
@@ -239,6 +241,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences3.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             comp3 = false;
             Index = 0;
@@ -282,6 +285,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences4.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             comp4 = false;
             Index = 0;
@@ -325,6 +329,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences5.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             comp5 = false;
             Index = 0;
@@ -368,6 +373,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences6.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             comp6 = false;
             Index = 0;
@@ -411,6 +417,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences7.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             comp7 = false;
             Index = 0;
@@ -454,6 +461,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences8.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             comp8 = false;
             Index = 0;
@@ -497,6 +505,7 @@ public class DialogueController : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences9.Length))
         {
             UI.changeBack();
+            DialogueText.text = "";
             runner = false;
             comp9 = false;
             Index = 0;
