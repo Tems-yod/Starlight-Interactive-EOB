@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dialogue
   - DoorButton
+  - Impassable
   layers:
   - Default
   - TransparentFX
