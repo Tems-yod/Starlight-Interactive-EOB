@@ -29,5 +29,11 @@ public class WhiteOutEffect : MonoBehaviour
         var tempColor = image.color;
         tempColor.a = percentKilled;
         image.color = tempColor;
+
+        if(percentKilled >= 1)
+        {
+            Debug.Log("Quitting...");
+            Application.Quit();
+        }
     }
 }

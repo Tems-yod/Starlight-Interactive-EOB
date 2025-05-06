@@ -9,6 +9,9 @@ public class AIController : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
 
+    private int teleportTimer = 1000;
+
+
     //Patrolling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -26,10 +29,14 @@ public class AIController : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    AudioSource EyeSound;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+
+        EyeSound = GetComponent<AudioSource>();
     }
 
 
@@ -57,6 +64,14 @@ public class AIController : MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
+
+        teleportTimer--;
+
+        if(teleportTimer<=0)
+        {
+            Debug.Log("Teleporting...");
+            teleportTimer = 1000;
+        }
     }
 
     private void SearchWalkPoint()
@@ -72,6 +87,7 @@ public class AIController : MonoBehaviour
 
     private void ChasePlayer()
     {
+        
         if(percentPlayerKilled>0)
             {
                 percentPlayerKilled -= 5;
@@ -81,9 +97,12 @@ public class AIController : MonoBehaviour
 
     private void AttackPlayer()
     {
+        EyeSound.Play(0);
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);
+
+        
 
         if(!alreadyAttacked)
         {
