@@ -4,69 +4,61 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogueController : MonoBehaviour
+public class DialogueController3 : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI DialogueText;
-    public string[] Sentences;
-
+    public string[] Sentences4;
     [SerializeField] private Text Name;
     private int Index = 0;
     private bool runner = false;
-    private bool compute1 = false;
-    private bool comp = false;
+    private bool compute4 = false;
+    private bool comp4 = false;
     public float DialogueSpeed;
     [SerializeField] private GameObject dialo;
-    [SerializeField] private ZeroGravity P;
     private UIManager UI;
     private ComputerWork CW;
-
-    
-    
-    
-    
-
     // Start is called before the first frame update
     void Start()
     {
-        P = GameObject.Find("Player").GetComponent<ZeroGravity>();
+        UI = GameObject.Find("UIManager").GetComponent<UIManager>();
+        CW = GameObject.Find("EyeComputer").GetComponent<ComputerWork>();
         
-    
     }
 
     // Update is called once per frame
     void Update()
     {
-        Computer();
+        Computer4();
         
-        
-    
     }
-    public void activateCompute1()
+
+    public void activateCompute4()
     {
         dialo.gameObject.SetActive(true);
-        Name.text = "Name: Kris Bellaren";
-        comp = true;
-        compute1 = true;
+        Name.text = "Name: Grady Baxter";
+        UI.changeUP();
+        comp4 = true;
+        compute4 = true;
 
     }
 
-    
-
-    private void Computer()
+    private void Computer4()
     {
-        if((Input.GetKeyDown(KeyCode.E) && (runner == false && comp == true)) || compute1 == true)
+        if((Input.GetKeyDown(KeyCode.E) && runner == false && comp4 == true) || compute4 == true)
         {
             runner = true;
-            compute1 = false;
-            NextSentence();
+            compute4 = false;
+            NextSentence4();
 
         }
-        else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences.Length))
+        else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences4.Length))
         {
-            dialo.gameObject.SetActive(false);
+            UI.changeBack();
             DialogueText.text = "";
             runner = false;
+            comp4 = false;
             Index = 0;
+            
             
 
 
@@ -74,34 +66,24 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    void NextSentence()
+    void NextSentence4()
     {
-        if(Index <= Sentences.Length - 1)
+        if(Index <= Sentences4.Length - 1)
         {
             DialogueText.text = "";
-            StartCoroutine(WriteSentences());
+            StartCoroutine(WriteSentences4());
         }
         
     }
 
-    IEnumerator WriteSentences()
+    IEnumerator WriteSentences4()
     {
-        foreach(char Character in Sentences[Index].ToCharArray())
+        foreach(char Character in Sentences4[Index].ToCharArray())
         {
             DialogueText.text += Character;
             yield return new WaitForSeconds(DialogueSpeed);
         }
         Index++;
         runner = false;
-        
-        
     }
-
-    
-
-    
-
-    
-   
-
 }

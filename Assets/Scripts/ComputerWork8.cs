@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComputerWork : MonoBehaviour
+public class ComputerWork8 : MonoBehaviour
 {
     public int Index = 0;
     private UIManager UI;
@@ -19,8 +19,8 @@ public class ComputerWork : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DC = GameObject.Find("DialogueController").GetComponent<DialogueController>();
-        
+
+        DC8 = GameObject.Find("DialogueController8").GetComponent<DialogueController8>();
 
         
     }
@@ -35,14 +35,12 @@ public class ComputerWork : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            
             if ((Input.GetKeyDown(KeyCode.E)))
             {
-               DC.activateCompute1();
-
+               DC8.activateCompute9();
             }
-            
             
         }
     }
-
 }
