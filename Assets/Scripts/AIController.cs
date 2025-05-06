@@ -29,14 +29,14 @@ public class AIController : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
-    AudioSource EyeSound;
+    // AudioSource EyeSound;
 
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
 
-        EyeSound = GetComponent<AudioSource>();
+      //  EyeSound = GetComponent<AudioSource>();
     }
 
 
@@ -97,7 +97,7 @@ public class AIController : MonoBehaviour
 
     private void AttackPlayer()
     {
-        EyeSound.Play(0);
+       // EyeSound.Play(0);
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);

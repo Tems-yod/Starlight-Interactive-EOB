@@ -8,6 +8,8 @@ public class SURPRISE : MonoBehaviour
     [SerializeField] public GameObject eye;
     [SerializeField] public int waitTimer = 15;
     private bool doOnce = false;
+
+
     // Start is called before the first frame update
     void Start()
     {

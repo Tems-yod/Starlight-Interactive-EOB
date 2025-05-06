@@ -8,10 +8,11 @@ public class WhiteOutEffect : MonoBehaviour
    public Image image;
    [SerializeField] public GameObject eye;
    private AIController AIController;
-
+   AudioSource EyeSound;
    private float percentKilled = 0;
    void Start () 
    {
+         EyeSound = GetComponent<AudioSource>();
          AIController = eye.GetComponent<AIController>();
 
          image = GetComponent<Image>();
@@ -30,6 +31,10 @@ public class WhiteOutEffect : MonoBehaviour
         tempColor.a = percentKilled;
         image.color = tempColor;
 
+        if(percentKilled>.01 && percentKilled<.09)
+        {
+            EyeSound.Play(0);
+        }
         if(percentKilled >= 1)
         {
             Debug.Log("Quitting...");
