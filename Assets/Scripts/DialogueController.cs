@@ -45,7 +45,7 @@ public class DialogueController : MonoBehaviour
     {
         dialo.gameObject.SetActive(true);
         Name.text = "Name: Kris Bellaren";
-        comp = true;
+        
         compute1 = true;
 
     }
@@ -54,14 +54,14 @@ public class DialogueController : MonoBehaviour
 
     private void Computer()
     {
-        if((Input.GetKeyDown(KeyCode.E) && (runner == false && comp == true)) || compute1 == true)
+        if((Input.GetKeyDown(KeyCode.E) && comp == true && runner == false) || compute1 == true)
         {
             runner = true;
             compute1 = false;
             NextSentence();
 
         }
-        else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences.Length))
+        else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences.Length && runner == false))
         {
             dialo.gameObject.SetActive(false);
             DialogueText.text = "";
@@ -90,10 +90,22 @@ public class DialogueController : MonoBehaviour
         {
             DialogueText.text += Character;
             yield return new WaitForSeconds(DialogueSpeed);
+
+            
+            
+        
         }
         Index++;
-        runner = false;
+        StartCoroutine(runtime());
         
+        
+        
+    }
+
+    IEnumerator runtime()
+    {
+        runner = false;
+        yield return new WaitForSeconds(5.0f);
         
     }
 
