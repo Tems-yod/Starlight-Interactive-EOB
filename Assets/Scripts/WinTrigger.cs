@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SURPRISE : MonoBehaviour
+public class WinTrigger : MonoBehaviour
 {
 
-    [SerializeField] public GameObject eye;
-    [SerializeField] public int waitTimer = 25;
-    [SerializeField] public int despawnTimer = 30;
+    [SerializeField] public GameObject text;
+    [SerializeField] public int waitTimer = 8;
     private bool doOnce = false;
 
 
@@ -23,21 +23,12 @@ public class SURPRISE : MonoBehaviour
         
     }
 
-
-    private IEnumerator DespawnWait()
-    {
-        yield return new WaitForSeconds(despawnTimer);
-        eye.SetActive(false);
-        doOnce = false;
-    }
-
     private IEnumerator TriggerInteraction()
 	{
 		yield return new WaitForSeconds(waitTimer);
-		Debug.Log("HIT TRIGGER");
-        eye.SetActive(true);
-        StartCoroutine(DespawnWait());
+		Application.Quit();
 	}
+ 
 
     void OnTriggerEnter(Collider other)
     {
@@ -46,8 +37,9 @@ public class SURPRISE : MonoBehaviour
             if(!doOnce)
 
                 {
-                    doOnce = true;
-                    StartCoroutine(TriggerInteraction());
+                    text.SetActive(true);
+                    doOnce = false;
+                    TriggerInteraction();
                 }
            
 

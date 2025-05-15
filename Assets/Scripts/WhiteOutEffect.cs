@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WhiteOutEffect : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class WhiteOutEffect : MonoBehaviour
     void Update()
     {
         percentKilled = (AIController.percentPlayerKilled)/200;
-        Debug.Log("PercentKilled: "+percentKilled);
+     
         image = GetComponent<Image>();
         var tempColor = image.color;
         tempColor.a = percentKilled;
@@ -38,7 +39,7 @@ public class WhiteOutEffect : MonoBehaviour
         if(percentKilled >= 1)
         {
             Debug.Log("Quitting...");
-            Application.Quit();
+            SceneManager.LoadScene("EOBZeroGrav");
         }
     }
 }

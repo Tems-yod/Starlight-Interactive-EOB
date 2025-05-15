@@ -34,8 +34,11 @@ public class DoorController : MonoBehaviour
 
 	public void PlayAnimation()
 	{
-		
-		if(!doorOpen && !pauseInteraction)
+		if(isLocked)
+		{
+			DoorSound.Play(0);
+		}
+		else if(!doorOpen && !pauseInteraction)
 		{
 			if(!isLocked)
 			{
@@ -46,7 +49,7 @@ public class DoorController : MonoBehaviour
 			}
 			else
 			{
-			
+				DoorSound.Play(0);
 			}
 			StartCoroutine(PauseDoorInteraction());
 		}

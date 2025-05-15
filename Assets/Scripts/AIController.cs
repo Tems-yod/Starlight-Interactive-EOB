@@ -9,7 +9,7 @@ public class AIController : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
 
-    private int teleportTimer = 1000;
+   
 
 
     //Patrolling
@@ -64,14 +64,6 @@ public class AIController : MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
-
-        teleportTimer--;
-
-        if(teleportTimer<=0)
-        {
-            Debug.Log("Teleporting...");
-            teleportTimer = 1000;
-        }
     }
 
     private void SearchWalkPoint()
