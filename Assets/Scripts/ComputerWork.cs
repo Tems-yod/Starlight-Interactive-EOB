@@ -7,19 +7,11 @@ public class ComputerWork : MonoBehaviour
     public int Index = 0;
     private UIManager UI;
     private DialogueController DC;
-    private DialogueController1 DC1;
-    private DialogueController2 DC2;
-    private DialogueController3 DC3;
-    private DialogueController4 DC4;
-    private DialogueController5 DC5;
-    private DialogueController6 DC6;
-    private DialogueController7 DC7;
-    private DialogueController8 DC8;
 
     // Start is called before the first frame update
     void Start()
     {
-        DC = GameObject.Find("DialogueController").GetComponent<DialogueController>();
+        DC = GameObject.Find("Computer6").GetComponent<DialogueController>();
         
 
         

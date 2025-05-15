@@ -8,12 +8,12 @@ public class DialogueController1 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI DialogueText;
     public string[] Sentences2;
     [SerializeField] private Text Name;
-    private int Index = 0;
-    private bool runner = false;
+    private int Index1 = 0;
+    private bool runner1 = false;
     private bool compute2 = false;
     private bool comp2 = false;
-    public float DialogueSpeed;
-    [SerializeField] private GameObject dialo;
+    public float DialogueSpeed1;
+    [SerializeField] private GameObject dialoque;
     private UIManager UI;
     private ComputerWork CW;
     // Start is called before the first frame update
@@ -31,29 +31,29 @@ public class DialogueController1 : MonoBehaviour
 
     public void activateCompute2()
     {
-        dialo.gameObject.SetActive(true);
+        dialoque.gameObject.SetActive(true);
         Name.text = "Name: Jessica 'Jesse' Bailey";
         comp2 = true;
-        compute2 = true;
+        
 
     }
 
     private void Computer2()
     {
-        if((Input.GetKeyDown(KeyCode.E) && (runner == false && comp2 == true) || compute2 == true))
+        if((Input.GetKeyDown(KeyCode.E) && (runner1 == false && comp2 == true)))
         {
-            runner = true;
-            compute2 = false;
+            runner1 = true;
+            
             NextSentence2();
 
         }
-        else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences2.Length))
+        else if ((Input.GetKeyDown(KeyCode.E) && Index1 == Sentences2.Length))
         {
-            dialo.gameObject.SetActive(false);
-            DialogueText.text = "";
-            runner = false;
+            dialoque.gameObject.SetActive(false);
+            DialogueText.text = "Entry Accepted: Press 'E' to continue";
+            runner1 = false;
             comp2 = false;
-            Index = 0;
+            Index1 = 0;
             
             
 
@@ -64,7 +64,7 @@ public class DialogueController1 : MonoBehaviour
 
     void NextSentence2()
     {
-        if(Index <= Sentences2.Length - 1)
+        if(Index1 <= Sentences2.Length - 1)
         {
             DialogueText.text = "";
             StartCoroutine(WriteSentences2());
@@ -74,12 +74,12 @@ public class DialogueController1 : MonoBehaviour
 
     IEnumerator WriteSentences2()
     {
-        foreach(char Character in Sentences2[Index].ToCharArray())
+        foreach(char Character in Sentences2[Index1].ToCharArray())
         {
             DialogueText.text += Character;
-            yield return new WaitForSeconds(DialogueSpeed);
+            yield return new WaitForSeconds(DialogueSpeed1);
         }
-        Index++;
-        runner = false;
+        Index1++;
+        runner1 = false;
     }
 }

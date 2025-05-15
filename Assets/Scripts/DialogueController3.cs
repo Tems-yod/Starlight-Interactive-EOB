@@ -20,8 +20,7 @@ public class DialogueController3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UI = GameObject.Find("UIManager").GetComponent<UIManager>();
-        CW = GameObject.Find("EyeComputer").GetComponent<ComputerWork>();
+
         
     }
 
@@ -36,24 +35,23 @@ public class DialogueController3 : MonoBehaviour
     {
         dialo.gameObject.SetActive(true);
         Name.text = "Name: Grady Baxter";
-        UI.changeUP();
         comp4 = true;
-        compute4 = true;
+        
 
     }
 
     private void Computer4()
     {
-        if((Input.GetKeyDown(KeyCode.E) && runner == false && comp4 == true) || compute4 == true)
+        if((Input.GetKeyDown(KeyCode.E) && runner == false && comp4 == true))
         {
             runner = true;
-            compute4 = false;
+            
             NextSentence4();
 
         }
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences4.Length))
         {
-            UI.changeBack();
+            dialo.gameObject.SetActive(false);
             DialogueText.text = "";
             runner = false;
             comp4 = false;

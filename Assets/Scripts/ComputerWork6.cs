@@ -15,7 +15,7 @@ public class ComputerWork6 : MonoBehaviour
     void Start()
     {
         
-        DC6 = GameObject.Find("DialogueController6").GetComponent<DialogueController6>();
+        DC6 = GameObject.Find("Computer1").GetComponent<DialogueController6>();
        
 
         

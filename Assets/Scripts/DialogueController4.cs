@@ -20,7 +20,7 @@ public class DialogueController4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UI = GameObject.Find("UIManager").GetComponent<UIManager>();
+
         
         
     }
@@ -36,24 +36,23 @@ public class DialogueController4 : MonoBehaviour
     {
         dialo.gameObject.SetActive(true);
         Name.text = "Name: Johannes Rault";
-        UI.changeUP();
         comp5 = true;
-        compute5 = true;
+        
 
     }
 
     private void Computer5()
     {
-        if((Input.GetKeyDown(KeyCode.E) && runner == false && comp5 == true) || compute5 == true)
+        if((Input.GetKeyDown(KeyCode.E) && (runner == false && comp5 == true)))
         {
             runner = true;
-            compute5 = false;
+            
             NextSentence5();
 
         }
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences5.Length))
         {
-            UI.changeBack();
+            dialo.gameObject.SetActive(false);
             DialogueText.text = "";
             runner = false;
             comp5 = false;

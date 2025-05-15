@@ -20,8 +20,7 @@ public class DialogueController5 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UI = GameObject.Find("UIManager").GetComponent<UIManager>();
-        CW = GameObject.Find("EyeComputer").GetComponent<ComputerWork>();
+
         
     }
 
@@ -35,24 +34,22 @@ public void activateCompute6()
     {
         dialo.gameObject.SetActive(true);
         Name.text = "Name: Mongomery Fletcher";
-        UI.changeUP();
         comp6 = true;
-        compute6 = true;
 
     }
 
     private void Computer6()
     {
-        if((Input.GetKeyDown(KeyCode.E) && runner == false && comp6 == true) || compute6 == true)
+        if((Input.GetKeyDown(KeyCode.E) && (runner == false && comp6 == true)))
         {
             runner = true;
-            compute6 = false;
+            
             NextSentence6();
 
         }
         else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences6.Length))
         {
-            UI.changeBack();
+            dialo.gameObject.SetActive(false);
             DialogueText.text = "";
             runner = false;
             comp6 = false;

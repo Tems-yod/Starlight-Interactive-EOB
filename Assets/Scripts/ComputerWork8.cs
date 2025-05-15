@@ -20,7 +20,7 @@ public class ComputerWork8 : MonoBehaviour
     void Start()
     {
 
-        DC8 = GameObject.Find("DialogueController8").GetComponent<DialogueController8>();
+        DC8 = GameObject.Find("Computer3").GetComponent<DialogueController8>();
 
         
     }

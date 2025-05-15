@@ -11,7 +11,7 @@ public class ComputerWork5 : MonoBehaviour
     void Start()
     {
        
-        DC5 = GameObject.Find("DialogueController5").GetComponent<DialogueController5>();
+        DC5 = GameObject.Find("Computer_EyeShape (2)").GetComponent<DialogueController5>();
         
 
         

@@ -11,7 +11,7 @@ public class ComputerWork1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DC1 = GameObject.Find("DialogueController1").GetComponent<DialogueController1>();
+        DC1 = GameObject.Find("Computer7").GetComponent<DialogueController1>();
 
 
         

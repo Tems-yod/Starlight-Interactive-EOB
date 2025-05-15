@@ -16,7 +16,7 @@ public class DialogueController : MonoBehaviour
     private bool comp = false;
     public float DialogueSpeed;
     [SerializeField] private GameObject dialo;
-    [SerializeField] private ZeroGravity P;
+    
     private UIManager UI;
     private ComputerWork CW;
 
@@ -28,7 +28,7 @@ public class DialogueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        P = GameObject.Find("Player").GetComponent<ZeroGravity>();
+        
         
     
     }
@@ -46,7 +46,7 @@ public class DialogueController : MonoBehaviour
         dialo.gameObject.SetActive(true);
         Name.text = "Name: Kris Bellaren";
         
-        compute1 = true;
+        comp = true;
 
     }
 
@@ -54,17 +54,16 @@ public class DialogueController : MonoBehaviour
 
     private void Computer()
     {
-        if((Input.GetKeyDown(KeyCode.E) && comp == true && runner == false) || compute1 == true)
+        if((Input.GetKeyDown(KeyCode.E) && comp == true && runner == false))
         {
             runner = true;
-            compute1 = false;
             NextSentence();
 
         }
-        else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences.Length && runner == false))
+        else if ((Input.GetKeyDown(KeyCode.E) && Index == Sentences.Length))
         {
             dialo.gameObject.SetActive(false);
-            DialogueText.text = "";
+            DialogueText.text = "Entry Accepted: Press 'E' to continue";
             runner = false;
             Index = 0;
             
@@ -88,26 +87,19 @@ public class DialogueController : MonoBehaviour
     {
         foreach(char Character in Sentences[Index].ToCharArray())
         {
-            DialogueText.text += Character;
+            
             yield return new WaitForSeconds(DialogueSpeed);
-
-            
-            
-        
+            DialogueText.text += Character;
         }
         Index++;
-        StartCoroutine(runtime());
+        runner = false;
+        
         
         
         
     }
 
-    IEnumerator runtime()
-    {
-        runner = false;
-        yield return new WaitForSeconds(5.0f);
-        
-    }
+    
 
     
 

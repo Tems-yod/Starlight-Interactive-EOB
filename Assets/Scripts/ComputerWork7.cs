@@ -6,13 +6,13 @@ public class ComputerWork7 : MonoBehaviour
 {
 
     private DialogueController7 DC7;
-    private DialogueController8 DC8;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         
-        DC7 = GameObject.Find("DialogueController7").GetComponent<DialogueController7>();
+        DC7 = GameObject.Find("Computer5").GetComponent<DialogueController7>();
         
 
         
